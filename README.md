@@ -113,17 +113,17 @@ Se añadieron pruebas para:
 - contenido esperado,
 - manejo de error 404.
 
-![Paso 3](img/3%20-%20creamos%20test%20unitarios.png)
+![Paso 3](img/3%20-%20Creamos%20test%20unitarios.png)
 
 ### 3. Configuración del workflow de CI
 
 Ajuste del workflow de GitHub Actions para ejecutar integración continua.
 
-![Paso 4](img/4%20-%20modificamos%20workflows.png)
+![Paso 4](img/4%20-%20Modificamos%20workflows.png)
 
 ### 4. Verificación de resultados
 
 Validación de la ejecución correcta de los tests en GitHub Actions.
 
-![Paso 5](img/5%20-%20test%20working.png)
+![Paso 5](img/5%20-%20Test%20working.png)
 
