@@ -1,21 +1,25 @@
 import unittest
 from src.app import app
 
-class BasicTests(unittest.TestCase):
+class FlaskTest(unittest.TestCase):
 
-    def setUp(self):
-        # Crea un cliente de prueba usando la aplicación Flask
-        self.app = app.test_client()
-        self.app.testing = True
+    # Test 1: Comprobar que la web carga
+    def test_index(self):
+        tester = app.test_client(self)
+        response = tester.get('/')
+        self.assertEqual(response.status_code, 200)
 
-    def test_home(self):
-        # Envía una solicitud GET a la ruta '/'
-        result = self.app.get('/')
-        
-        # Verifica que la respuesta sea "Hello, World!"
-        self.assertEqual(result.status_code, 200)
-        self.assertEqual(result.data.decode(), "Hello, World!")
+    # Test 2: Comprobar que el contenido es correcto
+    def test_index_content(self):
+        tester = app.test_client(self)
+        response = tester.get('/')
+        self.assertIn(b'Hello World', response.data)
 
+    # Test 3: Comprobar que una página que no existe da error 404
+    def test_404(self):
+        tester = app.test_client(self)
+        response = tester.get('/no-existe')
+        self.assertEqual(response.status_code, 404)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
