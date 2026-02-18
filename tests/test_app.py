@@ -13,7 +13,7 @@ class FlaskTest(unittest.TestCase):
     def test_index_content(self):
         tester = app.test_client(self)
         response = tester.get('/')
-        self.assertIn(b'Hello World', response.data)
+        self.assertIn(b'Hello, World!', response.data)
 
     # Test 3: Comprobar que una página que no existe da error 404
     def test_404(self):
