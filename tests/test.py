@@ -3,7 +3,7 @@ from src.app import app
 
 class FlaskTest(unittest.TestCase):
 
-    # Test 1: Comprobar que la web carga
+    # Test 1: Comprobar que la web carga correctamente
     def test_index(self):
         tester = app.test_client(self)
         response = tester.get('/')
