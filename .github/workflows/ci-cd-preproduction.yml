@@ -24,5 +24,4 @@ jobs:
           
       - name: Run tests
         run: |
-          # Esto ejecutará tu archivo tests/test.py
           python -m unittest discover tests
